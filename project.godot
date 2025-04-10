@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="Suits Crawl"
-run/main_scene="res://testing.tscn"
+run/main_scene="res://scenes/Testing.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
 
 [file_customization]
 
