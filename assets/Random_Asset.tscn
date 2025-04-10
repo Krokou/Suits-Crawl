@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://nw18k7k0g0e6"]
-
-[ext_resource type="Script" uid="uid://cbdtj2hlv2wly" path="res://scripts/random_script.gd" id="1_dylpa"]
-
-[node name="Node3D" type="Node3D"]
-script = ExtResource("1_dylpa")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
