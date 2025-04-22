@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://4b8tnlecbojo"]
+
+[ext_resource type="PackedScene" uid="uid://du3lfbswmmhgd" path="res://assets/3D/PrototypeAndTesing/Card01.glb" id="1_uxmpj"]
+[ext_resource type="Shader" uid="uid://0joaqfiu15mb" path="res://assets/materials/TestingShader.tres" id="2_53h2v"]
+[ext_resource type="Texture2D" uid="uid://dhn74ajm47o5s" path="res://assets/3D/PrototypeAndTesing/Card01_Card01.png" id="3_1alxv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1alxv"]
+render_priority = 0
+shader = ExtResource("2_53h2v")
+shader_parameter/Texture2DParameter = ExtResource("3_1alxv")
+
+[node name="Card01" instance=ExtResource("1_uxmpj")]
+
+[node name="Card_01" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_1alxv")

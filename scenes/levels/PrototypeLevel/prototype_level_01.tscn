@@ -1,0 +1,128 @@
+[gd_scene load_steps=9 format=3 uid="uid://bnkggmlypirjw"]
+
+[ext_resource type="PackedScene" uid="uid://yy0guvhb7p00" path="res://assets/3D/PrototypeAndTesing/Table.glb" id="1_ldqpf"]
+[ext_resource type="PackedScene" uid="uid://csfylnagobibb" path="res://assets/3D/PrototypeAndTesing/cloth_01.tscn" id="2_radlq"]
+[ext_resource type="PackedScene" uid="uid://du3lfbswmmhgd" path="res://assets/3D/PrototypeAndTesing/Card01.glb" id="3_i8bkb"]
+[ext_resource type="Shader" uid="uid://c1awscynup51t" path="res://assets/materials/Pixelshader.gdshader" id="4_radlq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i8bkb"]
+render_priority = 0
+shader = ExtResource("4_radlq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ahb1i"]
+material = SubResource("ShaderMaterial_i8bkb")
+size = Vector2(2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ldqpf"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ldqpf"]
+
+[node name="Prototype_Level01" type="Node3D"]
+
+[node name="Table2" parent="." instance=ExtResource("1_ldqpf")]
+
+[node name="Cloth2" parent="." instance=ExtResource("2_radlq")]
+
+[node name="Card01" parent="." instance=ExtResource("3_i8bkb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76243, 0, -3.11435)
+
+[node name="Card02" parent="." instance=ExtResource("3_i8bkb")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, -4.77627, 0, 2.73419)
+
+[node name="Card03" parent="." instance=ExtResource("3_i8bkb")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, -0.277843, 0, -7.94816)
+
+[node name="Card04" parent="." instance=ExtResource("3_i8bkb")]
+transform = Transform3D(0.99352, 9.93595e-09, -0.113654, 0, -1, -8.74228e-08, -0.113654, 8.68563e-08, -0.99352, -0.303288, 0.0624749, -7.94816)
+
+[node name="Card05" parent="." instance=ExtResource("3_i8bkb")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, -0.277843, 0.130156, -7.94816)
+
+[node name="Card06" parent="." instance=ExtResource("3_i8bkb")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, -0.277843, 0.203058, -7.94816)
+
+[node name="Card07" parent="." instance=ExtResource("3_i8bkb")]
+transform = Transform3D(0.995874, -0.00122944, 0.0907423, -0.00130766, -0.999999, 0.000802499, 0.0907412, -0.000917854, -0.995874, -0.239516, 0.275464, -7.94816)
+
+[node name="Card08" parent="." instance=ExtResource("3_i8bkb")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, -0.277843, 0.352948, -7.94816)
+
+[node name="Card09" parent="." instance=ExtResource("3_i8bkb")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, -0.277843, 0.42218, -7.94816)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 5.96046e-08, 0, -5.96046e-08, 1, 1, 4.37114e-08, 2.6054e-15, -0.463564, 20.2, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.13886e-22, 0, 1.13886e-22, 1, 0, -1.19209e-06, 19.6188)
+light_energy = 23.85
+spot_range = 61.78
+
+[node name="PostProcess" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.13886e-22, 0, 1.13886e-22, 1, 0, 0, -0.354107)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_ahb1i")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03203, 6.23489, 14.3368)
+light_color = Color(0.916756, 0.657182, 0.354285, 1)
+light_energy = 5.0
+light_size = 1.63
+omni_range = 25.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.06445, 11.5223, -18.9558)
+light_color = Color(0.916756, 0.657182, 0.354285, 1)
+light_energy = 5.0
+light_size = 1.63
+omni_range = 25.0
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(156.398, 0, 0, 0, 21.1517, 0, 0, 0, 174.761, 0, -27, 0)
+mesh = SubResource("BoxMesh_ldqpf")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1.83185, 0, 0, 0, 1, 6.64522, 1.7316, 14.0982)
+mesh = SubResource("CylinderMesh_ldqpf")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.566874, 0, 0, 0, 1, 6.88667, 0.454115, 13.1455)
+mesh = SubResource("CylinderMesh_ldqpf")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.566874, 0, 0, 0, 1, 6.73029, 0.454115, 15.6027)
+mesh = SubResource("CylinderMesh_ldqpf")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.958838, 0, 0, 0, 1, 7.5013, 0.822514, 14.5673)
+mesh = SubResource("CylinderMesh_ldqpf")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1.21739, 0, 0, 0, 1, 5.73248, 1.19896, 14.5673)
+mesh = SubResource("CylinderMesh_ldqpf")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.918596, 0, 0, 0, 1, 5.73248, 0.512037, 13.4555)
+mesh = SubResource("CylinderMesh_ldqpf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(156.398, 0, 0, 0, 21.1517, 0, 0, 0, 174.761, 0, 67.8712, 0)
+mesh = SubResource("BoxMesh_ldqpf")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-6.83636e-06, 21.1517, 0, -156.398, -9.24572e-07, 0, 0, 0, 174.761, 81.2633, -1.13539, 0)
+mesh = SubResource("BoxMesh_ldqpf")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-6.83636e-06, 21.1517, 0, -156.398, -9.24572e-07, 0, 0, 0, 217.541, -98.4088, -9.61912, 29.4646)
+mesh = SubResource("BoxMesh_ldqpf")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.0980671, 0.013622, 174.761, -156.398, -0.00712193, 0.109621, 0.0527255, -21.1517, 0.11251, -13.7206, -1.17852, -69.3124)
+mesh = SubResource("BoxMesh_ldqpf")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.0980671, 0.013622, 174.761, -156.398, -0.00712193, 0.109621, 0.0527255, -21.1517, 0.11251, 11.9104, -9.57599, 110.389)
+mesh = SubResource("BoxMesh_ldqpf")

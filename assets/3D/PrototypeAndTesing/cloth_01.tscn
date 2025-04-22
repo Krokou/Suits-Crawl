@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://csfylnagobibb"]
+
+[ext_resource type="PackedScene" uid="uid://d1h7ux3nu7wnm" path="res://assets/3D/PrototypeAndTesing/Cloth.glb" id="1_15px2"]
+[ext_resource type="Shader" uid="uid://0joaqfiu15mb" path="res://assets/materials/TestingShader.tres" id="2_0qlnw"]
+[ext_resource type="Texture2D" uid="uid://bujqv3o2y5b4x" path="res://assets/3D/PrototypeAndTesing/Cloth_Cloth.png" id="3_s12sy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7w5dc"]
+render_priority = 0
+shader = ExtResource("2_0qlnw")
+shader_parameter/Texture2DParameter = ExtResource("3_s12sy")
+
+[node name="Cloth2" instance=ExtResource("1_15px2")]
+
+[node name="Cloth" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_7w5dc")

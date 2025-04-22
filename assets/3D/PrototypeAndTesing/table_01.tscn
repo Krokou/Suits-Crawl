@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c24lv7km4vk0c"]
+
+[ext_resource type="PackedScene" uid="uid://yy0guvhb7p00" path="res://assets/3D/PrototypeAndTesing/Table.glb" id="1_t2x83"]
+[ext_resource type="Material" uid="uid://cr72mp7bo74ik" path="res://assets/materials/TestingMaterial.tres" id="2_kxiq8"]
+
+[node name="Table2" instance=ExtResource("1_t2x83")]
+
+[node name="Table" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_kxiq8")
