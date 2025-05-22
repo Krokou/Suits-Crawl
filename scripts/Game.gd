@@ -148,3 +148,4 @@ func avoid_room():
 
 	draw_room()
 	has_avoided = true
+
