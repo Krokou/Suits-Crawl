@@ -1,3 +1,216 @@
-[gd_scene load_steps=0 format=3 uid="uid://35kndfiqxjbh"]
+[gd_scene load_steps=4 format=3 uid="uid://35kndfiqxjbh"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="Script" uid="uid://b8d43aomic47v" path="res://scripts/GameManager.gd" id="1_kruvs"]
+[ext_resource type="Script" uid="uid://by6xyhb5eu3as" path="res://scripts/CardController.gd" id="2_16yog"]
+[ext_resource type="Script" uid="uid://b62ftd4f34kol" path="res://scripts/menus/CardDisplay.gd" id="3_rvfp2"]
+
+[node name="Game" type="Node3D" node_paths=PackedStringArray("card_controller", "avoid_button")]
+script = ExtResource("1_kruvs")
+card_controller = NodePath("CanvasLayer")
+avoid_button = NodePath("CanvasLayer/AvoidCointainer/Avoid")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("cards", "current_weapon", "current_scewered", "current_health", "deck")]
+script = ExtResource("2_16yog")
+cards = [NodePath("CardContainer/HBoxContainer/Card0"), NodePath("CardContainer/HBoxContainer/Card1"), NodePath("CardContainer/HBoxContainer/Card2"), NodePath("CardContainer/HBoxContainer/Card3")]
+current_weapon = NodePath("WeaponContainer/Button")
+current_scewered = NodePath("SceweredContainer/Button")
+current_health = NodePath("HealthContainer/HealthLabel")
+deck = NodePath("DeckContainer/Label")
+
+[node name="CardContainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.0
+offset_top = -237.0
+offset_right = 354.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CardContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card0" type="Button" parent="CanvasLayer/CardContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_rvfp2")
+
+[node name="Card1" type="Button" parent="CanvasLayer/CardContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_rvfp2")
+index = 1
+
+[node name="Card2" type="Button" parent="CanvasLayer/CardContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_rvfp2")
+index = 2
+
+[node name="Card3" type="Button" parent="CanvasLayer/CardContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_rvfp2")
+index = 3
+
+[node name="DeckContainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -466.0
+offset_top = -237.0
+offset_right = -309.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/DeckContainer"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cards left: "
+
+[node name="WeaponContainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.0
+offset_top = 43.0
+offset_right = -71.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/WeaponContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_rvfp2")
+
+[node name="SceweredContainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 44.0
+offset_top = 43.0
+offset_right = 201.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/SceweredContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_rvfp2")
+
+[node name="HealthContainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -466.0
+offset_top = 43.0
+offset_right = -309.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthLabel" type="Label" parent="CanvasLayer/HealthContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Health:"
+
+[node name="BarehandedContainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = 10.0
+offset_right = -71.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BarehandedToggle" type="CheckButton" parent="CanvasLayer/BarehandedContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Barehanded"
+
+[node name="AvoidCointainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -279.0
+offset_right = 80.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Avoid" type="Button" parent="CanvasLayer/AvoidCointainer"]
+modulate = Color(4.28364e-06, 0.74677, 0.344727, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Avoid"
+
+[connection signal="pressed" from="CanvasLayer/CardContainer/HBoxContainer/Card0" to="." method="_on_card_0_pressed"]
+[connection signal="pressed" from="CanvasLayer/CardContainer/HBoxContainer/Card1" to="." method="_on_card_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/CardContainer/HBoxContainer/Card2" to="." method="_on_card_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/CardContainer/HBoxContainer/Card3" to="." method="_on_card_3_pressed"]
+[connection signal="toggled" from="CanvasLayer/BarehandedContainer/BarehandedToggle" to="." method="_on_barehanded_toggle_toggled"]
+[connection signal="pressed" from="CanvasLayer/AvoidCointainer/Avoid" to="." method="_on_avoid_pressed"]
