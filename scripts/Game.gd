@@ -31,10 +31,11 @@ func start_game():
 
 	for i in range(monster_count):
 		deck.append(Card.new(CARD_TYPE.MONSTER, i + 1))
+		deck.append(Card.new(CARD_TYPE.MONSTER, i + 1))
 	for i in range(potion_count):
-		deck.append(Card.new(CARD_TYPE.POTION, i + 1))
+		deck.append(Card.new(CARD_TYPE.POTION, i + 2))
 	for i in range(weapon_count):
-		deck.append(Card.new(CARD_TYPE.WEAPON, i + 1))
+		deck.append(Card.new(CARD_TYPE.WEAPON, i + 2))
 	
 	print("Printing deck")
 	for i in deck:
@@ -52,7 +53,7 @@ func start_game():
 
 func draw_room():
 	assert(current_room.size() <= 1)
-	assert(deck.size() >= 3)
+	assert(deck.size() >= 1)
 
 	if has_avoided:
 		has_avoided = false
@@ -148,4 +149,3 @@ func avoid_room():
 
 	draw_room()
 	has_avoided = true
-
