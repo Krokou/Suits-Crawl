@@ -52,4 +52,3 @@ func update_deck_display(deck_size: int):
 
 func toggle_weapon_display(disable: bool):
 	current_weapon.disabled = disable
-

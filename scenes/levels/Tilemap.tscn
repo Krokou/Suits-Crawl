@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5r11vbggvrts"]
+
+[ext_resource type="PackedScene" uid="uid://hoeccecw0t70" path="res://assets/3D/Tilemap.glb" id="1_6oky0"]
+
+[node name="Tilemap" instance=ExtResource("1_6oky0")]
